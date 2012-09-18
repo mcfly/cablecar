@@ -2,7 +2,7 @@
   "name": "application-name",
   "version": "0.0.1",
   "author": "Robert Kowalski <rok@kowalski.gd>",
-  "description": "A lightweight helper for async callbacks",
+  "description": "Searchable files with elasticsearch",
   "private": true,
   "scripts": {
     "start": "node app",
@@ -10,14 +10,15 @@
   },
   "dependencies": {
     "express": "3.0.0rc4",
-    "jade": "*"
+    "jade": "*",
+    "request": "2.11.x"
   },
   "devDependencies": {
-    "chai": "",
-    "mocha": "",
-    "sinon-chai": "",
-    "sinon": "",
-    "request": ""
+    "chai": "*",
+    "mocha": "*",
+    "sinon-chai": "*",
+    "sinon": "*",
+    "nock": "0.13.4"
   },
   "engine": "node 0.8.x"
 }

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p #{title}
+
+  p You searched for: #{results.searchQuery}
+
+  h2 Results:
+
+    for result in results.hits
+      include partials/result
