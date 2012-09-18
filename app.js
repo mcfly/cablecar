@@ -5,14 +5,16 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
 
-var app = express();
+var app = module.exports = express();
 
 app.configure(function(){
+  //Environment variables
   app.set('port', process.env.PORT || 3000);
+  app.set('elastic', process.env.ELASTIC || 'localhost:9200');
+
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
