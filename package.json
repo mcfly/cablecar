@@ -1,12 +1,23 @@
 {
   "name": "application-name",
   "version": "0.0.1",
+  "author": "Robert Kowalski <rok@kowalski.gd>",
+  "description": "A lightweight helper for async callbacks",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "test": "make"
   },
   "dependencies": {
     "express": "3.0.0rc4",
     "jade": "*"
-  }
+  },
+  "devDependencies": {
+    "chai": "",
+    "mocha": "",
+    "sinon-chai": "",
+    "sinon": "",
+    "request": ""
+  },
+  "engine": "node 0.8.x"
 }
