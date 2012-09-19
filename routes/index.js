@@ -1,6 +1,5 @@
 var elastic = require('../helper/elasticapi');
 
-
 exports.index = function(req, res) {
   res.render('index', {title: 'My cool title.'});
 };
@@ -15,6 +14,5 @@ exports.search = function(app) {
     };
 
     elastic.doQuery(req.body.searchquery, app.get('elastic'), callback);
-
   }
 };

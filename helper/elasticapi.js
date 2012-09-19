@@ -1,6 +1,6 @@
 var request = require('request');
 
-var createQuery = exports.createQuery = function (query) {
+var createQuery = exports.createQuery = function(query) {
   return {
     "fields": ["title", "filename"],
     "query": {

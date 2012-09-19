@@ -5,30 +5,30 @@ var expect = require('chai').expect,
 
 describe('/', function(done) {
 
-    it('should have a form', function(done) {
-      request('http://localhost:3000/', function (err, res, body) {
+  it('should have a form', function(done) {
+    request('http://localhost:3000/', function (err, res, body) {
 
-        expect(body).to.contain('<form method="post" action="/search"');
+      expect(body).to.contain('<form method="post" action="/search"');
 
-        done();
-      });
+      done();
     });
+  });
 
-    it('should have a text input field', function(done) {
-      request('http://localhost:3000/', function (err, res, body) {
+  it('should have a text input field', function(done) {
+    request('http://localhost:3000/', function (err, res, body) {
 
-        expect(body).to.contain('<input type="text"');
+      expect(body).to.contain('<input type="text"');
 
-        done();
-      });
+      done();
     });
+  });
 
-    it('should have a submit-button', function(done) {
-      request('http://localhost:3000/', function (err, res, body) {
+  it('should have a submit-button', function(done) {
+    request('http://localhost:3000/', function (err, res, body) {
 
-        expect(body).to.contain('<button type="submit"');
+      expect(body).to.contain('<button type="submit"');
 
-        done();
-      });
+      done();
     });
+  });
 });
