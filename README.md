@@ -9,12 +9,16 @@ It supports you with an own, independent searchengine for your indexed files, e.
 Supported are:
 
 ```
-PORT        Port of the App
-ELASTIC     Url of the Elasticsearc Service
+NODE_ENV            set to `production` for production!
+PORT                Port of the App
+ELASTIC             Url of the Elasticsearc Service
+ELASTICBASICUSER    Basic Auth Username for Elasticsearch
+ELASTICBASICPW      Basic Auth Password for Elasticsearch
 ```
 
-Example call:
+Example Startup:
 
 ```
-ELASTIC="YOUR_ELASTIC_SEARCH_IP_AND_PORT" PORT="80" node app.js
+NODE_ENV="production" ELASTIC="YOUR_ELASTIC_SEARCH_IP_AND_PORT" \
+PORT="80" node app.js
 ```

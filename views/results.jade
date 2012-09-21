@@ -3,8 +3,8 @@ extends layout
 block content
   h1= title
   p #{title}
-
-  p You searched for: #{results.searchQuery}
+  if results && results.searchQuery
+    p You searched for: #{results.searchQuery}
 
   h2 Results:
 

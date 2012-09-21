@@ -9,6 +9,8 @@ app.configure(function() {
   //Environment variables
   app.set('port', process.env.PORT || 3000);
   app.set('elastic', process.env.ELASTIC || 'http://127.0.0.1:9200');
+  app.set('basicAuthElasticUser', process.env.ELASTICBASICUSER);
+  app.set('basicAuthElasticPw', process.env.ELASTICBASICPW);
 
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');

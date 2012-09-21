@@ -5,14 +5,19 @@ exports.index = function(req, res) {
 };
 
 exports.search = function(app) {
+  var environment = [app.get('elastic'), app.get('basicAuthElasticUser'), app.get('basicAuthElasticPw')];
 
   return function(req, res) {
 
-    function callback(results) {
+    function cb(results) {
       results.searchQuery = req.body.searchquery;
       res.render('results', {title: 'Result', results: results.hits});
     };
 
-    elastic.doQuery(req.body.searchquery, app.get('elastic'), callback);
+    function err() {
+      res.render('results', {title: 'Connection error'});
+    }
+
+    elastic.doQuery(req.body.searchquery, environment, err, cb);
   }
 };
