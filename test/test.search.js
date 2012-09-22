@@ -21,7 +21,7 @@ describe('/search', function(done) {
     });
   });
 
-  it('should show the abstract', function(done) {
+  it('should show "No Results" if the result is empty', function(done) {
     var query = 'anothertest';
     shared.nock(query, {});
     request.post('http://localhost:3000/search', {form: {searchquery: query}}, function (err, res, body) {
