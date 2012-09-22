@@ -42,3 +42,17 @@ Example Startup:
 NODE_ENV="production" ELASTIC="YOUR_ELASTIC_SEARCH_IP_AND_PORT" \
 PORT="80" node app.js
 ```
+
+##Feeding ElasticSearch
+
+Bash and Perl:
+
+```
+
+```
+
+Ruby:
+
+```
+
+``

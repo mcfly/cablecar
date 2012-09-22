@@ -29,4 +29,21 @@ describe('/search', function(done) {
       done();
     });
   });
+
+  it('should show a download link', function(done) {
+    shared.nock();
+    request.post('http://localhost:3000/search', {form: {searchquery: 'Data'}}, function (err, res, body) {
+      expect(body).to.contain('<a href="http://myserver.com/download/pdf/Redis manual.pdf');
+      done();
+    });
+  });
+
+  it('should show no download link if no download-variable set', function(done) {
+    var query = 'nodownload';
+    shared.nock(query, shared.ELASTIC_RESPONSE_NO_DOWNLOAD);
+    request.post('http://localhost:3000/search', {form: {searchquery: query}}, function (err, res, body) {
+      expect(body).to.not.contain('<a href="http://myserver.com/download/pdf/Redis manual.pdf');
+      done();
+    });
+  });
 });

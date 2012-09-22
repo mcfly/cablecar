@@ -1,2 +1,7 @@
 p= result.fields.filename
-p= result.highlight.file
+
+if result.highlight && result.highlight.file
+  p= result.highlight.file[0]
+
+if result.fields.download
+  a(href='#{result.fields.download}#{result.fields.filename}')
