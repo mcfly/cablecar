@@ -6,7 +6,9 @@ block content
   if results && results.searchQuery
     p You searched for: #{results.searchQuery}
 
-  h2 Results:
-
+  if results && results.hits
+    h2 Results:
     for result in results.hits
       include partials/result
+  else
+    h2 No Results

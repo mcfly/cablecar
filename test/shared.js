@@ -29,8 +29,28 @@ var RESPONSE = exports.ELASTIC_RESPONSE = {
   }
 };
 
-exports.nock = function() {
+var EMPTY_RESPONSE = exports.EMPTY_ELASTIC_RESPONSE = {
+  "took" : 6,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 11,
+    "successful" : 11,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 0,
+    "max_score" : null,
+    "hits" : [ ]
+  }};
+
+exports.nock = function(query, res) {
+  if (!query) {
+    query = 'Data';
+  }
+  if (!res) {
+    res = RESPONSE;
+  }
   nock(ELASTIC_URL)
-    .post('/_search', elastic.createQuery('Data'))
-    .reply(200, RESPONSE);
+    .post('/_search', elastic.createQuery(query))
+    .reply(200, res);
 };
