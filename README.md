@@ -1,10 +1,10 @@
-##Nodelastic
+##Cablecar
 
-Nodelastic is a webinterface for Elasticsearch with installed attachments plugin.
+Cablecar is a webinterface for Elasticsearch with installed attachments plugin.
 
 It supports you with an own, independent searchengine for your indexed files, e.g. PDFs.
 
-Elastcsearch with the attachments plugin should be capable of the following formats:
+Elasticsearch should be capable of the following formats with the attachments plugin:
 
  * HyperText Markup Language
  * XML and derived formats
