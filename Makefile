@@ -4,4 +4,4 @@ test:
 watch:
 	@./node_modules/.bin/mocha -w -G
 
-.PHONY: test
+.PHONY: test watch
