@@ -2,13 +2,15 @@ var request = require('request');
 
 var createQuery = exports.createQuery = function(query) {
   return {
-    "fields": ["title", "filename"],
+    "fields": ["title", "filename", "download"],
     "query": {
       "query_string": {
         "query": query
       }
     },
     "highlight": {
+    "pre_tags" : [""],
+    "post_tags" : [""],
       "fields": {
         "file": {}
       }

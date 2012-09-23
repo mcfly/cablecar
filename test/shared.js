@@ -24,7 +24,7 @@ var RESPONSE = exports.ELASTIC_RESPONSE = {
         "download" : "http://myserver.com/download/pdf/"
       },
       "highlight" : {
-        "file" : [ "Environment for <em>Data</em> Analysis and Graphics\n\nVersion 2.15.1 (2012-06-22)\n\nW. N. Venables, D. M. Smith\nand the R", "6\n1.11 <em>Data</em> permanency and removing objects . . . . . . . . . . . . . . . . . . . . . . . 6\n\n2 Simple", "subsets of a <em>data</em> set . . . . 11\n2.8 Other types of objects . . . . . . . . . . . . . . . . . . . . . . . .", "Lists and <em>data</em> frames . . . . . . . . . . . . . . . . . . . . . . . . . 28\n6.1 Lists . . . . . . . . . .", "29\n6.3 <em>Data</em> frames . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ]
+        "file" : [ "Environment for Data Analysis and Graphics\n\nVersion 2.15.1 (2012-06-22)\n\nW. N. Venables, D. M. Smith\nand the R", "6\n1.11 Data permanency and removing objects . . . . . . . . . . . . . . . . . . . . . . . 6\n\n2 Simple", "subsets of a data set . . . . 11\n2.8 Other types of objects . . . . . . . . . . . . . . . . . . . . . . . .", "Lists and data frames . . . . . . . . . . . . . . . . . . . . . . . . . 28\n6.1 Lists . . . . . . . . . .", "29\n6.3 Data frames . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ]
       }
     } ]
   }

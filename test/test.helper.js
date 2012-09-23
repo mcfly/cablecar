@@ -9,13 +9,15 @@ describe('elasticapi helper', function() {
     it('should build a query in json', function() {
       var query = elastic.createQuery('weisswurst');
       var result = {
-        "fields": ["title", "filename"],
+        "fields": ["title", "filename", "download"],
         "query": {
           "query_string": {
             "query": "weisswurst"
           }
         },
         "highlight": {
+          "pre_tags" : [""],
+          "post_tags" : [""],
           "fields": {
             "file": {}
           }
