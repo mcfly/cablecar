@@ -46,4 +46,27 @@ describe('/search', function(done) {
       done();
     });
   });
+
+  describe('XSS', function(done) {
+
+    it('it should prevent XSS from searchqueries', function(done) {
+      var query ='<script>alert(0);</script>';
+      shared.nock('[removed]alert&#40;0&#41;;[removed]', shared.ELASTIC_RESPONSE_NO_DOWNLOAD);
+      request.post('http://localhost:3000/search', {form: {searchquery: query}}, function (err, res, body) {
+        expect(body).to.contain('[removed]alert&#40;0&#41;;[removed]');
+        done();
+      });
+    });
+
+    it('it should filter XSS from documents', function(done) {
+      var query = 'XSS';
+      shared.nock(query, shared.ELASTIC_RESPONSE_XSS);
+      request.post('http://localhost:3000/search', {form: {searchquery: query}}, function (err, res, body) {
+        expect(body).to.contain('[removed]alert&#40;0&#41;;[removed]');
+        expect(body).to.contain('[removed]blah(0);[removed]');
+        done();
+      });
+    });
+  });
+
 });
