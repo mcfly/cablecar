@@ -47,14 +47,4 @@ PORT="80" node app.js
 
 ##Feeding ElasticSearch
 
-Bash and Perl:
-
-```
-
-```
-
-Ruby:
-
-```
-
-``
+[Setup guide for elasticsearch](https://github.com/hamburg-honeybadgers/cablecar/wiki/Setup-Elasticsearch)
