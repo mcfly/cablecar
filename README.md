@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/hamburg-honeybadgers/cablecar.png)](http://travis-ci.org/hamburg-honeybadgers/cablecar)
+
 ##Cablecar
 
 Cablecar is a webinterface for Elasticsearch with installed attachments plugin.
