@@ -21,4 +21,13 @@ describe('app should return http status codes', function(done) {
       });
     });
   });
+
+  describe('if a rendering error is raised', function(done) {
+    it('should respond with http status 500', function(done) {
+      request.post('http://localhost:3000/search', function (err, res, body) {
+        expect(res.statusCode).to.equal(500);
+        done();
+      });
+    });
+  });
 });
