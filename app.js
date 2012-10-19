@@ -25,6 +25,11 @@ app.configure(function() {
     res.status(500);
     res.render('error', {title: 'Error'});
   });
+
+  app.use(function(req, res, next){
+    res.status(404);
+    res.render('error', {title: '404 Error'});
+  });
 });
 
 app.configure('development', function() {
