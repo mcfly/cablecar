@@ -1,14 +1,19 @@
 var expect = require('chai').expect,
-    request = require('request'),
+    request = require('supertest'),
     app = require('../app');
 
 describe('error', function(done) {
 
   it('should get rendered when a template could not be rendered', function(done) {
-    request.post('http://localhost:3000/search', function (err, res, body) {
-      expect(res.statusCode).to.equal(500);
-      expect(body).to.contain('Sad panda');
-      done();
-    });
+    request(app)
+      .post('/search')
+      .expect(500)
+      .end(function(err, res){
+        if (err) {
+          return done(err);
+        }
+        expect(res.text).to.contain('Sad panda');
+        done()
+      });
   });
 });
