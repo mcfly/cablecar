@@ -5,9 +5,7 @@ exports.index = function(req, res) {
   res.render('index', {title: 'My cool title.'});
 };
 
-exports.search = function(app) {
-  var environment = [app.get('elastic'), app.get('basicAuthElasticUser'), app.get('basicAuthElasticPw')];
-
+exports.search = function(environment) {
   return function(req, res) {
     var searchquery = sanitize(req.param('searchquery')).xss();
 
