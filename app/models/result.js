@@ -4,7 +4,7 @@ module.exports = Result;
 
 /*
  * Takes the result from elasticsearch
- * and the initial searchquery,
+ * and the initial searchquery model,
  * sanitizes the data and stores it
  */
 
@@ -22,7 +22,9 @@ function Result(object) {
     results.hits = {};
   }
 
-  results.hits.searchQuery = sanitize(object.query).xss();
+  if (object.query.isValid) {
+    results.hits.searchQuery = object.query.value;
+  }
 
   for (result in results.hits) {
     if (Array.isArray(results.hits[result])) {

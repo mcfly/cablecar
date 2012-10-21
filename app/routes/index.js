@@ -19,7 +19,7 @@ exports.search = function(environment) {
     function cb(results) {
       var results = new models.Result({
         results: results,
-        query: searchQuery.value
+        query: searchQuery
       }).values;
 
       res.render('results', {title: 'Result', results: results.hits});
