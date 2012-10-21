@@ -33,6 +33,7 @@ describe('SearchQuery', function() {
 });
 
 describe('Result', function(done) {
+
   var Result = models.Result;
 
   it('should sanitize the elasticsearch result', function() {
