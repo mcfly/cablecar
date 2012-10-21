@@ -29,7 +29,6 @@ describe('app should return http status codes', function(done) {
     });
 
     after(function() {
-      var temp = app.get('elastic');
       app.set('elastic', temp);
     });
 
