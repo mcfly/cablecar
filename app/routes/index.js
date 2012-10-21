@@ -11,6 +11,11 @@ exports.search = function(environment) {
 
     searchQuery = new models.SearchQuery({query: req.param('searchquery')});
 
+    if (!searchQuery.isValid) {
+      req.flash('Please enter a valid search query.');
+      res.redirect('/');
+    }
+
     function cb(results) {
       var results = new models.Result({
         results: results,

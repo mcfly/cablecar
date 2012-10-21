@@ -1,7 +1,8 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    routes = require('./app/routes');
+    routes = require('./app/routes'),
+    flashify = require('flashify');
 
 var app = module.exports = express();
 
@@ -18,6 +19,11 @@ app.configure(function() {
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+
+  app.use(express.cookieParser('secret'));
+  app.use(express.session());
+  app.use(flashify);
+
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 

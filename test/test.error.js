@@ -4,7 +4,18 @@ var expect = require('chai').expect,
 
 describe('error', function(done) {
 
-  it('should get rendered when a template could not be rendered', function(done) {
+  it('should get rendered when a connection error appears', function(done) {
+    var temp;
+    before(function() {
+      temp = app.get('elastic');
+      app.set('elastic', 'foo');
+    });
+
+    after(function() {
+      var temp = app.get('elastic');
+      app.set('elastic', temp);
+    });
+
     request(app)
       .post('/search')
       .expect(500)
@@ -17,7 +28,7 @@ describe('error', function(done) {
       });
   });
 
-  it('should get rendered when a template could not be rendered', function(done) {
+  it('should get rendered when a route does not exist', function(done) {
     request(app)
       .get('/trololololo')
       .expect(404)

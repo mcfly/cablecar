@@ -20,11 +20,34 @@ describe('app should return http status codes', function(done) {
     });
   });
 
-  describe('if a rendering error is raised', function(done) {
+  describe('if a connnection error is raised', function(done) {
+    var temp;
+
+    before(function() {
+      temp = app.get('elastic');
+      app.set('elastic', 'foo');
+    });
+
+    after(function() {
+      var temp = app.get('elastic');
+      app.set('elastic', temp);
+    });
+
     it('should respond with http status 500', function(done) {
       request(app)
         .post('/search')
         .expect(500, done);
+    });
+  });
+
+  describe('if an empty searchquery was prodided', function(done) {
+    it('should redirect', function(done) {
+      var query = '';
+
+      request(app)
+        .post('/search')
+        .send({searchquery: query})
+        .expect(302, done);
     });
   });
 });

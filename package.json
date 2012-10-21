@@ -12,7 +12,8 @@
     "express": "3.0.0rc4",
     "jade": "*",
     "request": "2.11.x",
-    "validator": "0.4.11"
+    "validator": "0.4.11",
+    "flashify": "0.1.0"
   },
   "devDependencies": {
     "chai": "*",
