@@ -1,3 +1,7 @@
+/*
+ * Fixtures and test helper
+ */
+
 var nock = require('nock'),
     elastic = require('../helper/elasticapi');
 

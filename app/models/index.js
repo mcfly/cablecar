@@ -1,3 +1,4 @@
 module.exports = {
-  SearchQuery: require('./searchquery')
+  SearchQuery: require('./searchquery'),
+  Result: require('./result')
 };
