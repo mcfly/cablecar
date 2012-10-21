@@ -3,8 +3,7 @@ var sanitize = require('validator').sanitize;
 module.exports = SearchQuery;
 
 function SearchQuery(object) {
-  var query,
-      sanitizedQuery;
+  var query;
 
   this.isValid = false;
 
@@ -13,9 +12,7 @@ function SearchQuery(object) {
   }
 
   //sanitize
-  sanitizedQuery = sanitize(object.query).xss();
-
-  query = sanitizedQuery;
+  query = sanitize(object.query).xss();
 
   // validation
   if (query && query.length > 1) {
