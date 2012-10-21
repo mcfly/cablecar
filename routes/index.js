@@ -31,7 +31,7 @@ exports.search = function(environment) {
     };
 
     function err() {
-      res.render('results', {title: 'Connection error'});
+      res.render('error', {title: 'Connection error'});
     }
 
     elastic.doQuery(searchquery, environment, err, cb);

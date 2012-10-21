@@ -19,6 +19,19 @@ describe('/search', function(done) {
       });
   });
 
+  it('should show a "no connection"-error if it can not connect to elasticsearch', function(done) {
+    request(app)
+      .post('/search')
+      .send({searchquery: 'Data'})
+      .end(function(err, res){
+        if (err) {
+          return done(err);
+        }
+        expect(res.text).to.contain('Connection error');
+        done();
+      });
+  });
+
   it('should show the abstract', function(done) {
     shared.nock();
     request(app)
