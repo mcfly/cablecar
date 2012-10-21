@@ -1,5 +1,5 @@
 var elastic = require('../helper/elasticapi'),
-    models = require('../app/models/');
+    models = require('../models/');
 
 exports.index = function(req, res) {
   res.render('index', {title: 'My cool title.'});

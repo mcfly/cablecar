@@ -1,7 +1,7 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    routes = require('./routes');
+    routes = require('./app/routes');
 
 var app = module.exports = express();
 
@@ -12,7 +12,7 @@ app.configure(function() {
   app.set('basicAuthElasticUser', process.env.ELASTICBASICUSER);
   app.set('basicAuthElasticPw', process.env.ELASTICBASICPW);
 
-  app.set('views', __dirname + '/views');
+  app.set('views', __dirname + '/app/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));

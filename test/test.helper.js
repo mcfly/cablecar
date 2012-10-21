@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    elastic = require('../helper/elasticapi'),
+    elastic = require('../app/helper/elasticapi'),
     shared = require('./shared'),
     sinon = require('sinon');
 

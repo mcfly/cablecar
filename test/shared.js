@@ -3,7 +3,7 @@
  */
 
 var nock = require('nock'),
-    elastic = require('../helper/elasticapi');
+    elastic = require('../app/helper/elasticapi');
 
 var ELASTIC_URL = exports.ELASTIC_URL = 'http://127.0.0.1:9200';
 
