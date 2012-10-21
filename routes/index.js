@@ -1,4 +1,5 @@
 var elastic = require('../helper/elasticapi'),
+    models = require('../app/models/'),
     sanitize = require('validator').sanitize;
 
 exports.index = function(req, res) {
@@ -7,7 +8,11 @@ exports.index = function(req, res) {
 
 exports.search = function(environment) {
   return function(req, res) {
-    var searchquery = sanitize(req.param('searchquery')).xss();
+    var sanitizedQuery,
+        searchQuery;
+
+    sanitizedQuery = sanitize(req.param('searchquery')).xss();
+    searchQuery = new models.SearchQuery({query: sanitizedQuery});
 
     function cb(results) {
       var result,
@@ -17,7 +22,7 @@ exports.search = function(environment) {
         results = {};
         results.hits = {};
       }
-      results.hits.searchQuery = searchquery;
+      results.hits.searchQuery = searchQuery.value;
 
       for (result in results.hits) {
         if (Array.isArray(results.hits[result])) {
@@ -33,7 +38,6 @@ exports.search = function(environment) {
     function err() {
       res.render('error', {title: 'Connection error'});
     }
-
-    elastic.doQuery(searchquery, environment, err, cb);
+    elastic.doQuery(searchQuery.value, environment, err, cb);
   }
 };
