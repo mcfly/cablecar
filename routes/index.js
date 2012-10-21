@@ -8,11 +8,9 @@ exports.index = function(req, res) {
 
 exports.search = function(environment) {
   return function(req, res) {
-    var sanitizedQuery,
-        searchQuery;
+    var searchQuery;
 
-    sanitizedQuery = sanitize(req.param('searchquery')).xss();
-    searchQuery = new models.SearchQuery({query: sanitizedQuery});
+    searchQuery = new models.SearchQuery({query: req.param('searchquery')});
 
     function cb(results) {
       var result,

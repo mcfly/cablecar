@@ -1,5 +1,10 @@
-module.exports = function(object) {
-  var query;
+var sanitize = require('validator').sanitize;
+
+module.exports = SearchQuery;
+
+function SearchQuery(object) {
+  var query,
+      sanitizedQuery;
 
   this.isValid = false;
 
@@ -7,7 +12,10 @@ module.exports = function(object) {
     return;
   }
 
-  query = object.query;
+  //sanitize
+  sanitizedQuery = sanitize(object.query).xss();
+
+  query = sanitizedQuery;
 
   // validation
   if (query && query.length > 1) {

@@ -23,4 +23,9 @@ describe('SearchQuery', function(done) {
     var query = new SearchQuery({query: 'foo'});
     expect(query.value).to.equal('foo');
   });
+
+  it('should sanitize the value', function() {
+    var query = new SearchQuery({query: '<script>alert(0);</script>'});
+    expect(query.value).to.equal('[removed]alert&#40;0&#41;;[removed]');
+  });
 });
