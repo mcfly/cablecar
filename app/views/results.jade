@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1= title
   if results && results.searchQuery
-    p You searched for: #{results.searchQuery}
+    h2 You searched for: #{results.searchQuery}
 
   if results && results.hits
-    h2 Results:
-    for result in results.hits
-      include partials/result
+    table(class='table table-striped')
+      tbody
+        for result in results.hits
+          include partials/result
   else
     h2 No Results

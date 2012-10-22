@@ -1,8 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.block {
+  display: block;
 }
 
-a {
-  color: #00B7FF;
+/* Errormessages */
+#messages ul,
+#messages ul li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#messages ul li {
+  margin: 0px auto;
+  padding: 20px;
+  font-size: 14px;
+  width: 442px;
+  text-align: center;
+}
+
+#messages ul.info li,
+#messages ul.error li {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+#messages ul.error li {
+  color: #cc0000;
+  border: 1px solid #cc0000;
+  background: #fff;
+}
+
+#messages ul.info li {
+  color: #339933;
+  border: 1px solid #339933;
+  background: #fff;
 }

@@ -29,7 +29,7 @@ app.configure(function() {
 
   app.use(function(err, req, res, next) {
     res.status(500);
-    res.render('error', {title: 'Error'});
+    res.render('error', {title: '500 Error'});
   });
 
   app.use(function(req, res, next){

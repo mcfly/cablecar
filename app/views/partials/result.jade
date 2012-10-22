@@ -1,7 +1,11 @@
-p= result.fields.filename
+tr
+  td
+    p= result.fields.filename
 
-if result.highlight && result.highlight.file
-  p= result.highlight.file[0]
+    if result.highlight && result.highlight.file
+      p= result.highlight.file[0]
 
-if result.fields.download
-  a(href='#{result.fields.download}#{result.fields.filename}')
+    if result.fields.download
+      a(href='#{result.fields.download}#{result.fields.filename}') #{result.fields.download}#{result.fields.filename}
+    else
+      a(href='#{result.fields.filename}')
