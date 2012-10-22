@@ -22,11 +22,11 @@ exports.search = function(environment) {
         query: searchQuery
       }).values;
 
-      res.render('results', {title: 'Cablecar', results: results.hits});
+      res.render('results', {results: results.hits});
     }
 
     function err() {
-      res.render('error', {title: 'Connection error'});
+      res.render('error', {error: 'Connection error'});
     }
     elastic.doQuery(searchQuery.value, environment, err, cb);
   }

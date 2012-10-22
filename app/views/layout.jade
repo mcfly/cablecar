@@ -1,7 +1,7 @@
 doctype 5
 html
   head
-    title= title
+    title= settings.title
 
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
@@ -16,7 +16,7 @@ html
     div(class='container')
       div(class='navbar')
         div(class='navbar-inner')
-          div(class='brand', href='#') #{title}
+          div(class='brand', href='#') #{settings.title}
           ul(class='nav')
             li
               a(href='/') Home

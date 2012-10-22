@@ -13,6 +13,8 @@ app.configure(function() {
   app.set('basicAuthElasticUser', process.env.ELASTICBASICUSER);
   app.set('basicAuthElasticPw', process.env.ELASTICBASICPW);
 
+  app.set('title', 'Cablecar');
+
   app.set('views', __dirname + '/app/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -29,12 +31,12 @@ app.configure(function() {
 
   app.use(function(err, req, res, next) {
     res.status(500);
-    res.render('error', {title: '500 Error'});
+    res.render('error', {error: '500 error'});
   });
 
   app.use(function(req, res, next){
     res.status(404);
-    res.render('error', {title: '404 Error'});
+    res.render('error', {error: '404 error'});
   });
 });
 
