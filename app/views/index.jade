@@ -1,13 +1,3 @@
 extends layout
 
 block content
-  if (flash.message != undefined)
-    div(id='messages')
-      ul.error
-        li= flash.message
-
-  form(method='post', action='/search')
-    legend Search
-    input(type='text', name='searchquery', placeholder='Cablecar Search')
-
-    button(type='submit', class='block btn') Submit
