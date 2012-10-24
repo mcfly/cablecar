@@ -16,10 +16,8 @@ html
     div(class='container')
       div(class='navbar')
         div(class='navbar-inner')
-          div(class='brand', href='#') #{settings.title}
+          a(class='brand', href='/') #{settings.title}
           ul(class='nav')
-            li
-              a(href='/') Home
             li
               a(href='https://github.com/hamburg-honeybadgers/cablecar') Fork us!
       block content
