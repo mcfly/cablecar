@@ -45,11 +45,9 @@ app.configure('development', function() {
   app.locals.pretty = true;
 });
 
-var environment = [app.get('elastic'), app.get('basicAuthElasticUser'), app.get('basicAuthElasticPw')];
-
 app.get('/', routes.index);
 app.get('/search', routes.index);
-app.post('/search', routes.search(environment));
+app.post('/search', routes.search(app));
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));

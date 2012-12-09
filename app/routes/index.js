@@ -5,9 +5,10 @@ exports.index = function(req, res) {
   res.render('index', {title: 'Cablecar'});
 };
 
-exports.search = function(environment) {
+exports.search = function(app) {
   return function(req, res) {
-    var searchQuery;
+    var environment = [app.get('elastic'), app.get('basicAuthElasticUser'), app.get('basicAuthElasticPw')],
+        searchQuery;
 
     searchQuery = new models.SearchQuery({query: req.param('searchquery')});
 
