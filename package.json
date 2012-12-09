@@ -18,7 +18,7 @@
     "url": "https://github.com/hamburg-honeybadgers/cablecar.git"
   },
   "dependencies": {
-    "express": "3.0.0",
+    "express": "3.0.4",
     "jade": "*",
     "request": "2.11.x",
     "validator": "0.4.11",
