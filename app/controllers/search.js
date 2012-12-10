@@ -1,11 +1,7 @@
 var elastic = require('../helper/elasticapi'),
     models = require('../models/');
 
-exports.index = function(req, res) {
-  res.render('index', {title: 'Cablecar'});
-};
-
-exports.search = function(app) {
+module.exports = function(app) {
   return function(req, res) {
     var environment = [app.get('elastic'), app.get('basicAuthElasticUser'), app.get('basicAuthElasticPw')],
         searchQuery;

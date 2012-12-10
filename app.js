@@ -1,7 +1,7 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    routes = require('./app/routes'),
+    controllers = require('./app/controllers'),
     flashify = require('flashify');
 
 var app = module.exports = express();
@@ -44,10 +44,11 @@ app.configure('development', function() {
   app.use(express.errorHandler());
   app.locals.pretty = true;
 });
+console.log(controllers.home);
 
-app.get('/', routes.index);
-app.get('/search', routes.index);
-app.post('/search', routes.search(app));
+app.get('/', controllers.home);
+app.get('/search', controllers.home);
+app.post('/search', controllers.search(app));
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));

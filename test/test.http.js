@@ -20,6 +20,14 @@ describe('app should return http status codes', function(done) {
     });
   });
 
+  describe('if the search was requested with GET', function(done) {
+    it('should respond with http status 200', function(done) {
+      request(app)
+        .get('/search')
+        .expect(200, done);
+    });
+  });
+
   describe('if a connnection error is raised', function(done) {
     var temp;
 
@@ -39,7 +47,7 @@ describe('app should return http status codes', function(done) {
     });
   });
 
-  describe('if an empty searchquery was prodided', function(done) {
+  describe('if an empty searchquery was provided', function(done) {
     it('should redirect', function(done) {
       var query = '';
 
